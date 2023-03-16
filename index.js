@@ -1,6 +1,10 @@
-let headTitEl = document.getElementById("header-title");
-let addItemEl = document.getElementById("items");
+const collection = document.getElementsByClassName("list-group-item");
+for (let i = 0; i < collection.length; i++) {
+  if(i==2){
+    collection[i].style.backgroundColor = "green";
+  }else{
+    collection[i].style.backgroundColor = "red";
+    collection[i].style.fontWeight="bold";
+  }
+}
 
-headTitEl.style.border = "2px solid black";
-addItemEl.style.color="Green";
-addItemEl.style.fontWeight="bold";
