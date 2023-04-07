@@ -1,9 +1,9 @@
-const collection = document.getElementsByTagName("li");
+const first_el = document.querySelector(".list-group-item");
+const collection=document.querySelectorAll(".list-group-item");
+first_el.style.backgroundColor="Blue";
 for (let i = 0; i < collection.length; i++) {
-  if(i==4){
-    collection[i].style.backgroundColor = "green";
-  }else{
-    collection[i].style.backgroundColor = "red";
-    collection[i].style.fontWeight="bold";
+  if(i==3){
+    collection[i].textContent="";
+    collection[i].style.border="none";
   }
 }
