@@ -1,15 +1,12 @@
-var form = document.getElementById('addForm');
-var itemList = document.getElementById('items');
-var filter = document.getElementById('filter');
-
-// Form submit event
-form.addEventListener('submit', addItem);
-// Delete event
-itemList.addEventListener('click', removeItem);
-// Filter event
-filter.addEventListener('keyup', filterItems);
-
+var form=document.getElementById("addForm");
+var itemList = document.getElementById("items");
+var filter=document.getElementById("filter");
+var saveBtn= document.getElementById("saveButton");
+form.addEventListener('submit',addItem);
+itemList.addEventListener('click',removeItem);
+filter.addEventListener('keyup',filterItems);
 // Add item
+
 function addItem(e){
   e.preventDefault();
 
@@ -36,7 +33,10 @@ function addItem(e){
   li.appendChild(deleteBtn);
 
   // Append li to list
-  itemList.appendChild(li);
+  itemList.appendChild(li); 
+  localStorage.setItem("newItem", li); 
+
+  
 }
 
 // Remove item
@@ -45,6 +45,7 @@ function removeItem(e){
     if(confirm('Are You Sure?')){
       var li = e.target.parentElement;
       itemList.removeChild(li);
+      localStorage.removeItem("li");
     }
   }
 }
