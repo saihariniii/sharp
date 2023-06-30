@@ -34,7 +34,8 @@ function addItem(e){
 
   // Append li to list
   itemList.appendChild(li); 
-  localStorage.setItem("newItem", li); 
+  let newItem_serialized=JSON.stringify(li);
+  localStorage.setItem("newItem", newItem_serialized); 
 
   
 }
@@ -45,7 +46,7 @@ function removeItem(e){
     if(confirm('Are You Sure?')){
       var li = e.target.parentElement;
       itemList.removeChild(li);
-      localStorage.removeItem("li");
+      localStorage.removeItem("newItem");
     }
   }
 }
